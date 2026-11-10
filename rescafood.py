@@ -79,14 +79,15 @@ h1, h2, h3 {
 # ==========================================
 
 def conectar_db():
+    config = st.secrets["mysql"]
+
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="oculta",
-        database="rescafood"
+        host=config["host"],
+        port=int(config.get("port", 3306)),
+        user=config["user"],
+        password=config["password"],
+        database=config["database"]
     )
-
-
 # ==========================================
 # CREACION DE TABLAS
 # ==========================================
