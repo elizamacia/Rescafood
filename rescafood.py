@@ -80,7 +80,7 @@ h1, h2, h3 {
 
 def conectar_db():
     config = st.secrets["mysql"]
-
+    
     return mysql.connector.connect(
         host=config["host"],
         port=int(config["port"]),
@@ -90,7 +90,6 @@ def conectar_db():
         ssl_verify_cert=True,
         ssl_verify_identity=True
     )
-
 # ==========================================
 # CREACION DE TABLAS
 # ==========================================
