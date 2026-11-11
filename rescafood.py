@@ -78,7 +78,7 @@ h1, h2, h3 {
 # CONEXION A MYSQL
 # ==========================================
 
-def conectar_db():
+    def conectar_db():
     config = st.secrets["mysql"]
     
     return mysql.connector.connect(
@@ -87,8 +87,7 @@ def conectar_db():
         user=config["user"],
         password=config["password"],
         database=config["database"],
-        ssl_verify_cert=True,
-        ssl_verify_identity=True
+        ssl_disabled=False
     )
 # ==========================================
 # CREACION DE TABLAS
