@@ -83,11 +83,14 @@ def conectar_db():
 
     return mysql.connector.connect(
         host=config["host"],
-        port=int(config.get("port", 3306)),
+        port=int(config["port"]),
         user=config["user"],
         password=config["password"],
-        database=config["database"]
+        database=config["database"],
+        ssl_verify_cert=True,
+        ssl_verify_identity=True
     )
+
 # ==========================================
 # CREACION DE TABLAS
 # ==========================================
